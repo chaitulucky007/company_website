@@ -1,7 +1,7 @@
 import smtplib, ssl
 # smtp is for sending email
 # ssl is for making secure connection b/w webserver and browser
-
+import os
 
 def send_mail(receiver, message):
     host = "smtp.gmail.com"
@@ -9,7 +9,7 @@ def send_mail(receiver, message):
     port = 465
     # its also standard
     username = "chaitulucky007@gmail.com"
-    password = "lshk hykg jhim xtlg"
+    password = os.getenv("PASSWORD")
 
     context = ssl.create_default_context()
     # for creation of secure context for sending emial securely we need ssl lib
@@ -18,5 +18,6 @@ def send_mail(receiver, message):
     with smtplib.SMTP_SSL(host, port, context=context) as server:
         server.login(username, password)
         server.sendmail(username, receiver, message)
+
 
 

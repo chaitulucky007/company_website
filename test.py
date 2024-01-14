@@ -21,3 +21,6 @@ i am learning python
 with smtplib.SMTP_SSL(host,port,context=contex) as server:
     server.login(username, password)
     server.sendmail(username, receiver, message)
+
+
+

@@ -35,3 +35,4 @@ with col3:
         st.write(row["role"])
         st.image('images2/' + row['image'])
 
+
